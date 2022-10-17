@@ -61,3 +61,11 @@ class Scene:
 
     def method2(self, var1: some_type, var2: some_type):
         return var1
+
+
+class ModelElement:
+    def create_element(self, name, location, angle):
+        if name == 'Flash':
+            return Flash(location, angle)
+        if name == 'Camera':
+            return Camera(location, angle)
