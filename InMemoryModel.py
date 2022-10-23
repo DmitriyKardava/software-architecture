@@ -1,4 +1,4 @@
-from ModelElements import PoligonalModel, Scene, Flash, Camera
+from ModelElements import ModelElement, PoligonalModel, Scene, Flash, Camera
 
 
 class ModelStore:
@@ -10,6 +10,12 @@ class ModelStore:
         self.__observer = []
         self.__notify = None
         self.__i_model_changer = None
+
+    def add_camera(self, location, angle):
+        self.cameras.append(ModelElement('Camera', location, angle))
+
+    def add_flash(self, location, angle):
+        self.flashes.append(ModelElement('Flash', location, angle))
 
     def register_observer(self, observer):
         self.__observer.append(observer)
