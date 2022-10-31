@@ -1,20 +1,17 @@
+from abc import abstractmethod
+
+
 class Figure(object):
     def __init__(self):
         self.objects = []
+
+    @abstractmethod
+    def area(self):
+        pass
 
     def add_figure(self, figure):
         self.objects.append(figure)
 
     @property
-    def perimeter(self):
-        s = 0
-        for x in self.objects:
-            s += x.perimeter
-        return s
-
-    @property
-    def area(self):
-        s = 0
-        for x in self.objects:
-            s += x.area
-        return s
+    def sum_area(self):
+        return sum([x.area for x in self.objects])

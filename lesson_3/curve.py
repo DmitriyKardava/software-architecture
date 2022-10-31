@@ -9,7 +9,7 @@ class Circle(Figure):
         super().__init__()
 
     @property
-    def perimeter(self):
+    def length(self):
         return Circle.pi * self.r * 2
 
     @property
