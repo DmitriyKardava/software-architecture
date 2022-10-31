@@ -1,7 +1,14 @@
+from abc import abstractmethod
 from figures import Figure
 
 
-class Triangle(Figure):
+class Polygon(Figure):
+    @abstractmethod
+    def area(self):
+        pass
+
+
+class Triangle(Polygon):
     def __init__(self, a, b, c):
         if not (a + b > c and a + c > b and b + c > a):
             raise ValueError
@@ -20,7 +27,7 @@ class Triangle(Figure):
         return p*(p-self.a)*(p-self.b)*(p-self.c) ** 0.5
 
 
-class Rectangle(Figure):
+class Rectangle(Polygon):
     def __init__(self, a, b):
         self.a = a
         self.b = b
@@ -45,7 +52,7 @@ class Square(Rectangle):
 
     @property
     def perimeter(self):
-        super().perimeter(self.a, self.b)
+        return super().perimeter(self.a, self.b)
 
     @property
     def area(self):
