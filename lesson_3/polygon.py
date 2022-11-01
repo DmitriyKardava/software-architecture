@@ -49,11 +49,3 @@ class Square(Rectangle):
         self.a = a
         self.b = b
         super().__init__(self.a, self.b)
-
-    @property
-    def perimeter(self):
-        return super().perimeter(self.a, self.b)
-
-    @property
-    def area(self):
-        return self.a ** 2
