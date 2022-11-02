@@ -20,7 +20,6 @@ class Triangle(Polygon):
     def __init__(self, sides):
         if len(sides) != 3:
             raise ValueError
-        self.sides = sides
         if not (sides[0] + sides[1] > sides[2]
                 and sides[0] + sides[2] > sides[1]
                 and sides[1] + sides[2] > sides[0]):
@@ -37,7 +36,6 @@ class Rectangle(Polygon):
     def __init__(self, sides):
         if len(sides) != 2:
             raise ValueError
-        self.sides = sides
         super().__init__(sides)
 
     @property
@@ -49,5 +47,4 @@ class Square(Rectangle):
     def __init__(self, sides):
         if sides[0] != sides[1]:
             raise ValueError
-        self.sides = sides
         super().__init__(sides)
