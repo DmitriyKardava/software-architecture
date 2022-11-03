@@ -42,6 +42,10 @@ class Rectangle(Polygon):
     def area(self):
         return self.sides[0] * self.sides[1]
 
+    @property
+    def perimeter(self):
+        return super().perimeter * 2
+        
 
 class Square(Rectangle):
     def __init__(self, sides):
